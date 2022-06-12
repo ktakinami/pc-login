@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blur">
+        <div class="login-container">
+            <div class="profile-img"></div>
+            <form action=""><!-- For forms, POST -->
+                <input id="input-pw" type="password" placeholder="Password" required maxlength="16">
+            </form>
+            <div class="submenu">
+                <p><a class="forgot-pw" href="#">Forgot your password?</a></p>
+                <span>OR</span>
+                <p><a class="back-to-login" href="index.html">Change User</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const password = 12345 //Password set for example purpose
+        const inputPassword = document.querySelector('#input-pw')
+        inputPassword.addEventListener('keypress', function(e) {
+            if(e.key === "Enter") {
+                if(inputPassword.value == password) {
+                    alert('Welcome!')
+                    inputPassword.value = ''
+                } else {
+                    alert('Wrong Password!')
+                    inputPassword.value = ''
+                }
+            }
+        })
+    </script>
+</body>
+</html>
